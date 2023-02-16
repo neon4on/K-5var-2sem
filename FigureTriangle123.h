@@ -1,5 +1,7 @@
 #pragma once
 #include "Figure123.h"
+#include <vector> // Вектор
+#include <algorithm> // Find 
 #include <iostream>
 using namespace std;
 
@@ -13,28 +15,28 @@ class FigureTriangle123 : public Figure123
     int y3; //фигура  (3) 
     bool live;
 public:
-    void Create() {
-        cout << "Figure Created!";
-        cout << endl;
-        cout << "Start position:" << endl;
-        cout << "First \t= 0,0" << endl;
-        cout << "Second \t= 0,0" << endl;
-        cout << "Third \t= 0,0";
-        cout << endl;
-        x1 = 0;
-        y1 = 0;
-        x2 = 0;
-        y2 = 0;
-        x3 = 0;
-        y3 = 0;
-        live = 1;
+    void Create(int &num) {
+            cout << "Figure " << num << " Created!";
+            cout << endl;
+            cout << "Start position:" << endl;
+            cout << "First \t= 0,0" << endl;
+            cout << "Second \t= 0,0" << endl;
+            cout << "Third \t= 0,0";
+            cout << endl;
+            x1 = 0;
+            y1 = 0;
+            x2 = 0;
+            y2 = 0;
+            x3 = 0;
+            y3 = 0;
+            live = 1;
     }
-    void Delete() { // Удаление фигуры
+    void Delete(int& num) { // Удаление фигуры
         cout << "Figure Delited!";
         cout << endl;
         live = 0;
     }
-    void Show() { // Тип фигуры
+    void Show(int& num) { // Тип фигуры
         if (live == 1) {
             cout << "Triangle";
         }
@@ -43,7 +45,7 @@ public:
         }
         cout << endl;
     }
-    void Verification() {
+    void Verification(int& num) {
         if (live == 1) {
             cout << "Figure Exists";
         }
@@ -52,7 +54,7 @@ public:
         }
         cout << endl;
     }
-    void MoveO() {
+    void MoveO(int& num) {
         if (live == 1) {
             x1 += 1;
             y1 += 0;
@@ -67,7 +69,7 @@ public:
         }
         cout << endl;
     }
-    void Intersect() {
+    void Intersect(int& num) {
         if (live == 1) {
             cout << "First: " << x1 << "," << y1 << endl <<
                 "Second: " << x2 << "," << y2 << endl <<

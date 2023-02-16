@@ -1,6 +1,8 @@
 ﻿#include <iostream>		// консольный ввод-вывод
 #include <string>		// для работы с типом данных string
 #include <iomanip>		// форматированный вывод на экран
+#include <vector> // Вектор
+#include <algorithm> // Find 
 #include "Figure123.h" // Родительский класс
 #include "FigureTriangle123.h" // Дочерний класс
 #include "FigureSexangle123.h" // Дочерний класс
@@ -79,6 +81,8 @@ int main()
     FigureTriangle123 A; //1 Figure
     FigureSexangle123 B; //2 Figure
     int select, selectA, selectB, num;
+    setlocale(LC_ALL, "Russian");
+    vector<int> v1, v2;
     do
     {
         // вызываем главное меню и выполняем выбор пользователя
@@ -90,46 +94,50 @@ int main()
             do
             {
                 selectA = Menu.MenuTriangle();
+                cout << "Введите номер вашего треугольника: ";
+                cin >> num;
+                v1.push_back(num);
+                cout << endl;
                 switch (selectA)
                 {
                 case 1:
                 {
-                    A.Create();
+                    A.Create(num);
                     cout << endl;
                     system("pause");
                     break;
                 }
                 case 2:
                 {
-                    A.Delete();
+                    A.Delete(num);
                     cout << endl;
                     system("pause");
                     break;
                 }
                 case 3:
                 {
-                    A.Show();
+                    A.Show(num);
                     cout << endl;
                     system("pause");
                     break;
                 }
                 case 4:
                 {
-                    A.Verification();
+                    A.Verification(num);
                     cout << endl;
                     system("pause");
                     break;
                 }
                 case 5:
                 {
-                    A.MoveO();
+                    A.MoveO(num);
                     cout << endl;
                     system("pause");
                     break;
                 }
                 case 6:
                 {
-                    A.Intersect();
+                    A.Intersect(num);
                     cout << endl;
                     system("pause");
                     break;
