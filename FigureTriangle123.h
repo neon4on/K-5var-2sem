@@ -37,47 +37,27 @@ public:
         live = 0;
     }
     void Show(int& num) { // Тип фигуры
-        if (live == 1) {
-            cout << "Triangle";
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        cout << "Triangle";
         cout << endl;
     }
     void Verification(int& num) {
-        if (live == 1) {
-            cout << "Figure Exists";
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        cout << "Figure Exists";
         cout << endl;
     }
     void MoveO(int& num) {
-        if (live == 1) {
-            x1 += 1;
-            y1 += 0;
-            x2 += 4;
-            y2 += 1;
-            x3 += -3;
-            y3 += -4;
-            cout << "Figure has been moved";
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        x1 += 1;
+        y1 += 0;
+        x2 += 4;
+        y2 += 1;
+        x3 += -3;
+        y3 += -4;
+        cout << "Figure has been moved";
         cout << endl;
     }
     void Intersect(int& num) {
-        if (live == 1) {
-            cout << "First: " << x1 << "," << y1 << endl <<
-                "Second: " << x2 << "," << y2 << endl <<
-                "Third: " << x3 << "," << y3;
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        cout << "First: " << x1 << "," << y1 << endl <<
+            "Second: " << x2 << "," << y2 << endl <<
+            "Third: " << x3 << "," << y3;
         cout << endl;
     }
 };

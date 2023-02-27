@@ -94,53 +94,107 @@ int main()
             do
             {
                 selectA = Menu.MenuTriangle();
-                cout << "Введите номер вашего треугольника: ";
-                cin >> num;
-                v1.push_back(num);
-                cout << endl;
+                bool found;
                 switch (selectA)
                 {
                 case 1:
                 {
-                    A.Create(num);
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего треугольника: ";
+                    cin >> num;
+                    if (found = find(v1.begin(), v1.end(), num) != v1.end()) {
+                        cout << "Уже существует данный треугольник!" << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        v1.push_back(num);
+                        cout << endl;
+                        A.Create(num);
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 2:
                 {
-                    A.Delete(num);
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего треугольника: ";
+                    cin >> num;
+                    if (found = find(v1.begin(), v1.end(), num) != v1.end()) {
+                        A.Delete(num);
+                        cout << endl;
+                        v1.erase(std::remove(v1.begin(), v1.end(), num), v1.end());
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого треугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 3:
                 {
-                    A.Show(num);
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего треугольника: ";
+                    cin >> num;
+                    if (found = find(v1.begin(), v1.end(), num) != v1.end()) {
+                        A.Show(num);
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого треугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 4:
                 {
-                    A.Verification(num);
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего треугольника: ";
+                    cin >> num;
+                    if (found = find(v1.begin(), v1.end(), num) != v1.end()) {
+                        A.Verification(num);
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого треугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 5:
                 {
-                    A.MoveO(num);
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего треугольника: ";
+                    cin >> num;
+                    if (found = find(v1.begin(), v1.end(), num) != v1.end()) {
+                        A.MoveO(num);
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого треугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 6:
                 {
-                    A.Intersect(num);
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего треугольника: ";
+                    cin >> num;
+                    if (found = find(v1.begin(), v1.end(), num) != v1.end()) {
+                        A.Intersect(num);
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого треугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 if (selectA != 22)
                 {
@@ -156,49 +210,107 @@ int main()
             do
             {
                 selectB = Menu.MenuSexangle();
+                bool found;
                 switch (selectB)
                 {
                 case 1:
                 {
-                    B.Create();
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего шестиугольника: ";
+                    cin >> num;
+                    if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
+                        cout << "Уже существует данный шестиугольник!" << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        v2.push_back(num);
+                        cout << endl;
+                        B.Create();
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 2:
                 {
-                    B.Delete();
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего шестиугольника: ";
+                    cin >> num;
+                    if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
+                        B.Delete();
+                        cout << endl;
+                        v2.erase(std::remove(v2.begin(), v2.end(), num), v2.end());
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого шестиугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 3:
                 {
-                    B.Show();
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего шестиугольника: ";
+                    cin >> num;
+                    if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
+                        B.Show();
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого шестиугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 4:
                 {
-                    B.Verification();
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего шестиугольника: ";
+                    cin >> num;
+                    if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
+                        B.Verification();
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого шестиугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 5:
                 {
-                    B.MoveO();
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего шестиугольника: ";
+                    cin >> num;
+                    if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
+                        B.MoveO();
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого шестиугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 case 6:
                 {
-                    B.Intersect();
-                    cout << endl;
-                    system("pause");
-                    break;
+                    cout << "Введите номер вашего шестиугольника: ";
+                    cin >> num;
+                    if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
+                        B.Intersect();
+                        cout << endl;
+                        system("pause");
+                        break;
+                    }
+                    else {
+                        cout << "Такого шестиугольника не существует" << endl;
+                        system("pause");
+                        break;
+                    }
                 }
                 if (selectB != 22)
                 {

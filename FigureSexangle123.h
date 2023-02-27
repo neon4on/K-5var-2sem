@@ -50,57 +50,37 @@ public:
         live = 0;
     }
     void Show() { // Тип фигуры
-        if (live == 1) {
-            cout << "Sexangle";
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        cout << "Sexangle";
         cout << endl;
     }
     void Verification() {
-        if (live == 1) {
-            cout << "Figure Exists";
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        cout << "Figure Exists";
         cout << endl;
     }
     void MoveO() {
-        if (live == 1) {
-            x1 += 2;
-            y1 += -5;
-            x2 += 3;
-            y2 += 5;
-            x3 += -6;
-            y3 += -2;
-            x4 += -8;
-            y4 += -7;
-            x5 += 5;
-            y5 += -3;
-            x6 += -10;
-            y6 += 15;
-            cout << "Figure has been moved";
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        x1 += 2;
+        y1 += -5;
+        x2 += 3;
+        y2 += 5;
+        x3 += -6;
+        y3 += -2;
+        x4 += -8;
+        y4 += -7;
+        x5 += 5;
+        y5 += -3;
+        x6 += -10;
+        y6 += 15;
+        cout << "Figure has been moved";
         cout << endl;
     }
     void Intersect() {
-        if (live == 1) {
-            cout <<
-                "First: " << x1 << "," << y1 << endl <<
-                "Second: " << x2 << "," << y2 << endl <<
-                "Third: " << x3 << "," << y3 << endl <<
-                "Fourth: " << x4 << "," << y4 << endl <<
-                "Fifth: " << x5 << "," << y5 << endl <<
-                "Sixth: " << x6 << "," << y6 << endl;
-        }
-        else {
-            cout << "Figure Does not exist!";
-        }
+        cout <<
+            "First: " << x1 << "," << y1 << endl <<
+            "Second: " << x2 << "," << y2 << endl <<
+            "Third: " << x3 << "," << y3 << endl <<
+            "Fourth: " << x4 << "," << y4 << endl <<
+            "Fifth: " << x5 << "," << y5 << endl <<
+            "Sixth: " << x6 << "," << y6 << endl;
         cout << endl;
     }
 };
