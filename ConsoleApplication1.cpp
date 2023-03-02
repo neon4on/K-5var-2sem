@@ -3,81 +3,19 @@
 #include <iomanip>		// форматированный вывод на экран
 #include <vector> // Вектор
 #include <algorithm> // Find 
-#include "Figure123.h" // Родительский класс
-#include "FigureTriangle123.h" // Дочерний класс
-#include "FigureSexangle123.h" // Дочерний класс
+#include "FigureSexangle123.h" // Дочерняя фигура Шестиугольник
+#include "FigureTriangle123.h" // Дочерняя фигура Треугольник
+#include "MenuTri.h" // Меню для треугольника
+#include "MenuSex.h" // Меню для шестиугольника
+#include "MainM.h" // Меню для выбора
+#include "MenuMain.h" // Главное Меню
 using namespace std;
-
-class Menu1 {
-public:
-    int MenuTriangle(void) {
-        int select;
-        do
-        {
-            system("CLS");
-            cout << "Select an action:" << endl << endl;
-            cout << "FIGURE Triangle" << endl;
-            cout << "Press 1 - Create figure" << endl;
-            cout << "Press 2 - Delite figure" << endl;
-            cout << "Press 3 - Show figure" << endl;
-            cout << "Press 4 - Verification figure" << endl;
-            cout << "Press 5 - MoveO figure" << endl;
-            cout << "Press 6 - Intersect figure" << endl << endl;
-            cout << "EXIT" << endl << endl;
-            cout << "Press 22 - Exit in main menu" << endl << endl;
-            cout << "Choice: ";
-            cin >> select;
-            cout << endl;
-        } while ((select < 1) || (select > 111));
-
-        return select;
-    }
-
-    int MenuSexangle(void) {
-        int select;
-        do
-        {
-            system("CLS");
-            cout << "Select an action:" << endl << endl;
-            cout << "FIGURE Sexangle" << endl;
-            cout << "Press 1 - Create figure" << endl;
-            cout << "Press 2 - Delite figure" << endl;
-            cout << "Press 3 - Show figure" << endl;
-            cout << "Press 4 - Verification figure" << endl;
-            cout << "Press 5 - MoveO figure" << endl;
-            cout << "Press 6 - Intersect figure" << endl << endl;
-            cout << "EXIT" << endl << endl;
-            cout << "Press 22 - Exit in main menu" << endl << endl;
-            cout << "Choice: ";
-            cin >> select;
-            cout << endl;
-        } while ((select < 1) || (select > 111));
-
-        return select;
-    }
-
-    int Menu(void) {
-        int select;
-        do
-        {
-            system("CLS");
-            cout << "Select an action:" << endl << endl;
-            cout << "Press 1 - Figure Triangle" << endl;
-            cout << "Press 2 - Figure Sexangle" << endl << endl;
-            cout << "EXIT" << endl << endl;
-            cout << "Press 111 - Exit the app" << endl << endl;
-            cout << "Choice: ";
-            cin >> select;
-            cout << endl;
-        } while ((select < 1) || (select > 111));
-
-        return select;
-    }
-};
 
 int main()
 {
-    Menu1 Menu; //Menu
+    MainM Menu; //Menu
+    MenuTri Menu1; //Menu
+    MenuSex Menu2; //Menu
     FigureTriangle123 A; //1 Figure
     FigureSexangle123 B; //2 Figure
     int select, selectA, selectB, num;
@@ -93,7 +31,7 @@ int main()
         {
             do
             {
-                selectA = Menu.MenuTriangle();
+                selectA = Menu1.Menu();
                 bool found;
                 switch (selectA)
                 {
@@ -209,7 +147,7 @@ int main()
         {
             do
             {
-                selectB = Menu.MenuSexangle();
+                selectB = Menu2.Menu();
                 bool found;
                 switch (selectB)
                 {
@@ -225,7 +163,7 @@ int main()
                     else {
                         v2.push_back(num);
                         cout << endl;
-                        B.Create();
+                        B.Create(num);
                         cout << endl;
                         system("pause");
                         break;
@@ -236,7 +174,7 @@ int main()
                     cout << "Введите номер вашего шестиугольника: ";
                     cin >> num;
                     if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
-                        B.Delete();
+                        B.Delete(num);
                         cout << endl;
                         v2.erase(std::remove(v2.begin(), v2.end(), num), v2.end());
                         system("pause");
@@ -253,7 +191,7 @@ int main()
                     cout << "Введите номер вашего шестиугольника: ";
                     cin >> num;
                     if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
-                        B.Show();
+                        B.Show(num);
                         cout << endl;
                         system("pause");
                         break;
@@ -269,7 +207,7 @@ int main()
                     cout << "Введите номер вашего шестиугольника: ";
                     cin >> num;
                     if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
-                        B.Verification();
+                        B.Verification(num);
                         cout << endl;
                         system("pause");
                         break;
@@ -285,7 +223,7 @@ int main()
                     cout << "Введите номер вашего шестиугольника: ";
                     cin >> num;
                     if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
-                        B.MoveO();
+                        B.MoveO(num);
                         cout << endl;
                         system("pause");
                         break;
@@ -301,7 +239,7 @@ int main()
                     cout << "Введите номер вашего шестиугольника: ";
                     cin >> num;
                     if (found = find(v2.begin(), v2.end(), num) != v2.end()) {
-                        B.Intersect();
+                        B.Intersect(num);
                         cout << endl;
                         system("pause");
                         break;

@@ -143,11 +143,19 @@
     <ClCompile Include="Figure123.cpp" />
     <ClCompile Include="FigureSexangle123.cpp" />
     <ClCompile Include="FigureTriangle123.cpp" />
+    <ClCompile Include="MainM.cpp" />
+    <ClCompile Include="MenuMain.cpp" />
+    <ClCompile Include="MenuSex.cpp" />
+    <ClCompile Include="MenuTri.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figure123.h" />
     <ClInclude Include="FigureSexangle123.h" />
     <ClInclude Include="FigureTriangle123.h" />
+    <ClInclude Include="MainM.h" />
+    <ClInclude Include="MenuMain.h" />
+    <ClInclude Include="MenuSex.h" />
+    <ClInclude Include="MenuTri.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
